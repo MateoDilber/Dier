@@ -1,0 +1,280 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ECDDC1;
+}
+
+main {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+main h2 {
+  color: #2c3e50;
+  margin-top: 1.5rem;
+  font-size: 1.8rem;
+}
+
+main p {
+  margin-bottom: 1rem;
+}
+
+.body-text {
+  max-width: 700px;
+  margin: auto;
+}
+
+header {
+  background-color: #274D43;
+  padding: 20px 0;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Hamburger Toggle */
+.nav-toggle {
+  display: none;
+  background-color: transparent;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+.nav-toggle-label {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: #f3eac3;
+  height: 3px;
+  width: 30px;
+  border-radius: 2px;
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  content: '';
+  top: -10px;
+}
+
+.nav-toggle-label span::after {
+  content: '';
+  top: 10px;
+}
+
+p {
+  font-size: 12px;
+}
+
+li {
+  font-size: 12px;
+}
+
+.Inspiratie main h2,
+.Inspiratie main h3,
+.Inspiratie main p,
+.Inspiratie main li {
+  padding-left: 30px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.nav-left,
+.nav-right {
+  list-style: none;
+  display: flex;
+  gap: 125px;
+  justify-content: center;
+}
+
+nav ul li a {
+  background-color: #f3eac3;
+  padding: 15px 30px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #e0d8ab;
+}
+
+.logo img {
+  width: 110px;  /* of 30px, net hoe klein je wil */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.nobco img {
+  width: 110px;  /* of 30px, net hoe klein je wil */
+  height: auto;
+  display: block;
+  margin: 0;
+}
+
+/* Dropdown menu */
+.has-dropdown {
+  position: relative;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f3eac3;
+  flex-direction: column;
+  min-width: 220px;
+  z-index: 1000;
+  gap: 0;
+}
+
+.dropdown li a {
+  padding: 10px 20px;
+  background-color: #f3eac3;
+}
+
+.dropdown li a:hover {
+  background-color: #e0d8ab;
+}
+
+.nav-left .dropdown,
+.nav-right .dropdown {
+  list-style-type: none;
+}
+
+.no-style-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.has-dropdown:hover .dropdown {
+  display: flex;
+}
+
+.intro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.body-text {
+  flex: 1;
+  padding: 20px;
+}
+
+.body-image {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+}
+
+.body-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+footer.contact {
+  background-color: #274D43;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.contact-info p:first-of-type {
+  margin: 20px;
+}
+
+.socials img {
+  width: 40px;
+  margin: 10px;
+}
+
+/* Media queries for mobile */
+@media (max-width: 557px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-toggle-label {
+    display: block;
+  }
+
+  .nav-left,
+  .nav-right {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 60px;
+    background-color: #274D43;
+    padding: 10px 0;
+  }
+
+  .nav-left li a,
+  .nav-right li a {
+    background-color: #f3eac3;
+    text-align: center;
+  }
+
+  .nav-toggle:checked + .nav-toggle-label + nav .nav-left,
+  .nav-toggle:checked + .nav-toggle-label + nav .nav-right {
+    display: flex;
+  }
+
+  nav {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  .logo {
+    padding: 20px;
+    font-size: 1.2rem;
+  }
+
+  .intro {
+    flex-direction: column;
+  }
+
+  .body-text, .body-image {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 10px;
+  }
+}
