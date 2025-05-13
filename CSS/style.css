@@ -35,7 +35,7 @@ main {
 }
 
 .features {
-  display: grid;  
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
@@ -52,5 +52,5 @@ footer {
   text-align: center;
   padding: 2rem;
   background-color: #eee;
-  margin-top: 17rem;
+  margin-top: 4rem;
 }
