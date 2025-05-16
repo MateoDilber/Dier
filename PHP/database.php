@@ -1,14 +1,14 @@
 <?php
 
 // Database instellingen
-$host = "sql7.freesqldatabase.com";
-$user = "sql7771094"; 
-$password = "nJ6RY1iX8k";
-$database = "sql7771094";
+$host = "localhost"; 
+$user = "root"; 
+$password = "";
+$database = "Dier";
 
 // Maak verbinding met de database
 
-$mysqli = new mysqli($host, $user, $password, $database);
+$mysqli = new mysqli($host, $name, $email, $password_hash, $database);
 
 try {
     if ($mysqli->connect_errno) {
