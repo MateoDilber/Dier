@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PawfectMatch - Profiel</title>
+  <link rel="stylesheet" href="../CSS/style.css" />
+</head>
+<body>
+  <header>
+    <h1>🐾 PawfectMatch</h1>
+    <p>Bekijk en bewerk je profiel</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="chat.html">Chat</a>
+      <a href="profile.html">Profiel</a>
+      <a href="logout.html">Uitloggen</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>👤 Jouw Profiel</h2>
+      <p>Pas hier je gegevens en voorkeuren aan.</p>
+    </section>
+
+    <section class="login-container">
+      <form>
+        <label for="name">Naam</label>
+        <input type="text" id="name" name="name" value="Jan de Hondenbaas" />
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" value="jan@example.com" />
+
+        <label for="dog-breed">Voorkeur Ras</label>
+        <input type="text" id="dog-breed" name="dog-breed" value="Labrador" />
+
+        <label for="dog-age">Voorkeur Leeftijd</label>
+        <select id="dog-age" name="dog-age">
+          <option value="puppy">Puppy</option>
+          <option value="young" selected>Jong</option>
+          <option value="adult">Volwassen</option>
+          <option value="senior">Senior</option>
+        </select>
+
+        <label for="dog-size">Voorkeur Grootte</label>
+        <select id="dog-size" name="dog-size">
+          <option value="small">Klein</option>
+          <option value="medium" selected>Medium</option>
+          <option value="large">Groot</option>
+        </select>
+
+        <button type="submit">Profiel opslaan</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p> 2025 PawfectMatch. Alle rechten voorbehouden.</p>
+  </footer>
+</body>
+</html>
