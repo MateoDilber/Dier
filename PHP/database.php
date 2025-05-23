@@ -1,14 +1,13 @@
 <?php
 
 // Database instellingen
-$host = "localhost"; 
-$user = "root"; 
+$host = "localhost";
+$user = "root";
 $password = "";
 $database = "Dier";
 
 // Maak verbinding met de database
-
-$mysqli = new mysqli($host, $name, $email, $password_hash, $database);
+$mysqli = new mysqli($host, $user, $password, $database);
 
 try {
     if ($mysqli->connect_errno) {

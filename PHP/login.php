@@ -1,35 +1,38 @@
 <?php
+require_once 'database.php';
 
 $is_invalid = false;
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    
-    $mysqli = require __DIR__ . "/database.php";
-    
-    $sql = sprintf("SELECT * FROM user
-                    WHERE email = '%s'",
-                   $mysqli->real_escape_string($_POST["email"]));
-    
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Zoek de gebruiker in de database
+    $sql = "SELECT * FROM user WHERE email = '$email'";
     $result = $mysqli->query($sql);
-    
-    $user = $result->fetch_assoc();
-    
-    if ($user) {
-        
-        if (password_verify($_POST["password"], $user["password_hash"])) {
-            
+
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+        // Controleer het wachtwoord
+        if (password_verify($password, $user['password_hash'])) {
+            // Login succesvol
             session_start();
-            
             session_regenerate_id();
-            
             $_SESSION["user_id"] = $user["id"];
-            
-            header("Location: index.php");
-            exit;
+            header("Location: ../HTML/index.html");
+            exit();
+        } else {
+            // Verkeerd wachtwoord
+            header("Location: ../HTML/login.html?error=wrong_password");
+            exit();
         }
+    } else {
+        // Gebruiker niet gevonden
+        header("Location: ../HTML/login.html?error=user_not_found");
+        exit();
     }
-    
-    $is_invalid = true;
+
+    $mysqli->close();
 }
 
 ?>
