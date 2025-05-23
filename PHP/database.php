@@ -1,5 +1,4 @@
 <?php
-
 // Database instellingen
 $host = "localhost";
 $user = "root";
@@ -19,5 +18,4 @@ try {
 
 // Als alles goed gaat:
 return $mysqli;
-
 ?>
