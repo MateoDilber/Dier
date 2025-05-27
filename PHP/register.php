@@ -25,8 +25,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO user (name, email, password_hash) VALUES ('$name', '$email', '$password_hash')";
     
     if ($mysqli->query($sql) === TRUE) {
-        // Stuur door naar login pagina
-        header("Location: ../HTML/login.html");
+        // Start een sessie en sla de gebruikersgegevens op
+        session_start();
+        $_SESSION["user_id"] = $mysqli->insert_id;
+        $_SESSION["user_name"] = $name;
+        $_SESSION["user_email"] = $email;
+        
+        // Stuur door naar profiel pagina
+        header("Location: ../HTML/profiel.html");
         exit();
     } else {
         echo "Error: " . $sql . "<br>" . $mysqli->error;
